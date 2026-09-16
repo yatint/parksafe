@@ -1,0 +1,56 @@
+import { ArrowRight, QrCode, Truck, ShieldCheck } from "lucide-react";
+import { Reveal } from "./shared";
+import { scrollToId } from "@/lib/scroll";
+
+const FinalCTA = ({ onActivate }) => (
+  <section className="relative py-28 sm:py-36 overflow-hidden grid-bg grain" data-testid="final-cta-section">
+    <div className="absolute inset-0 bg-gradient-to-b from-ink via-ember/5 to-ink pointer-events-none" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-ember/10 blur-[160px] pointer-events-none" />
+
+    <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
+      <Reveal>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-ember font-semibold" data-testid="final-cta-eyebrow">
+          08 / The Choice
+        </p>
+        <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mt-6" data-testid="final-cta-headline">
+          DON'T RIDE<br />
+          <span style={{ backgroundImage: "linear-gradient(90deg,#FF3B30,#FF5722)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>UNPROTECTED</span><br />
+          ANOTHER DAY.
+        </h2>
+        <p className="text-base sm:text-lg text-slate-400 leading-relaxed mt-7 max-w-xl mx-auto">
+          One sticker. Three minutes of setup. A lifetime of someone being able to help you when it matters most.
+        </p>
+      </Reveal>
+
+      <Reveal delay={0.15}>
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+          <button
+            onClick={() => scrollToId("#kits")}
+            data-testid="final-cta-buy-button"
+            className="group flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold bg-ember text-white hover:bg-flame transition-colors duration-300 shadow-[0_0_40px_-8px_rgba(255,59,48,0.7)]"
+          >
+            Order Your QR Kit
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
+          <button
+            onClick={onActivate}
+            data-testid="final-cta-activate-button"
+            className="flex items-center gap-2.5 px-8 py-4 rounded-full font-semibold border border-white/15 text-slate-200 hover:border-ember/60 hover:text-white transition-colors duration-300"
+          >
+            <QrCode className="w-4 h-4" /> Activate Existing QR
+          </button>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-9">
+          <span className="flex items-center gap-2 font-mono text-xs tracking-wider text-slate-500">
+            <Truck className="w-4 h-4 text-signal" /> FREE 2-DAY SHIPPING
+          </span>
+          <span className="flex items-center gap-2 font-mono text-xs tracking-wider text-slate-500">
+            <ShieldCheck className="w-4 h-4 text-signal" /> 30-DAY MONEY-BACK GUARANTEE
+          </span>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
+
+export default FinalCTA;

@@ -1,0 +1,210 @@
+{
+  "project_name": "ParkSafe",
+  "app_type": "landing_page",
+  "theme": "Dark & Bold Tactical High-Tech Safety",
+  "design_direction": "Awwwards Site-of-the-Day level with dark high-contrast aesthetic, kinetic headline reveal, numbered manifesto chapters (01/02/03), slow editorial marquee, spotlit product showcase, Lenis smooth scrolling, framer-motion scroll-reveals, and interactive emergency scenario storytelling.",
+  "typography": {
+    "heading_font": "Outfit, sans-serif",
+    "body_font": "Plus Jakarta Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+    "scale": {
+      "hero_h1": "text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]",
+      "section_h2": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight",
+      "card_h3": "text-xl sm:text-2xl font-bold tracking-tight",
+      "body_lg": "text-lg sm:text-xl text-slate-300 leading-relaxed",
+      "body_base": "text-base text-slate-400 leading-relaxed",
+      "mono_label": "text-xs uppercase tracking-[0.25em] font-mono font-semibold text-rose-500"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#0A0D14",
+      "secondary": "#111622",
+      "card": "#161C2E",
+      "card_hover": "#1E263C",
+      "glass": "rgba(16, 22, 36, 0.75)"
+    },
+    "accents": {
+      "primary_red": "#FF3B30",
+      "safety_orange": "#FF5722",
+      "neon_green_signal": "#00E676",
+      "glow_red": "rgba(255, 59, 48, 0.35)",
+      "glow_orange": "rgba(255, 87, 34, 0.25)"
+    },
+    "text": {
+      "primary": "#F8FAFC",
+      "secondary": "#94A3B8",
+      "muted": "#64748B",
+      "contrast_highlight": "#FFFFFF"
+    },
+    "border": {
+      "subtle": "rgba(255, 255, 255, 0.08)",
+      "highlight": "rgba(255, 59, 48, 0.4)",
+      "active": "#FF3B30"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-[#0A0D14]/80 border border-white/10 shadow-2xl",
+    "card_styling": "bg-[#111622] border border-white/10 rounded-2xl p-6 hover:border-rose-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,59,48,0.15)]",
+    "gradient_text": "bg-gradient-to-r from-white via-slate-200 to-rose-500 bg-clip-text text-transparent",
+    "accent_badge": "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 font-mono text-xs font-medium tracking-wide",
+    "grid_pattern": "bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40",
+    "glow_effect": "shadow-[0_0_50px_-12px_rgba(255,59,48,0.4)]"
+  },
+  "image_urls": {
+    "hero_motorcycle_rider": {
+      "url": "https://images.unsplash.com/photo-1611004061856-ccc3cbe944b2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwzfHxtb3RvcmN5Y2xlJTIwcmlkZXIlMjBoZWxtZXQlMjByb2FkfGVufDB8fHx8MTc4OTU1MTk5NHww&ixlib=rb-4.1.0&q=85",
+      "alt": "Rider wearing helmet with ParkSafe QR badge on motorcycle",
+      "placement": "Hero section dynamic 3D tilt card mockup with glowing QR overlay badge"
+    },
+    "qr_scan_action": {
+      "url": "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwc2Nhbm5pbmclMjBxciUyMGNvZGV8ZW58MHx8fHwxNzg5NTUxOTk0fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Smartphone scanning ParkSafe emergency QR profile",
+      "placement": "How ParkSafe Works step 3 & Real-Life Emergency Scenario showcase"
+    },
+    "motorcycle_night_detail": {
+      "url": "https://images.pexels.com/photos/12000096/pexels-photo-12000096.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "High resolution close up of sports bike headlight and tank QR sticker zone",
+      "placement": "Why Choose ParkSafe background & Bike QR Kit showcase feature image"
+    },
+    "helmet_close_up": {
+      "url": "https://images.pexels.com/photos/33323855/pexels-photo-33323855.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Rider helmet with waterproof reflective QR decal placement zone",
+      "placement": "Helmet Kit card & Trust section showcase"
+    },
+    "rider_lifestyle": {
+      "url": "https://images.pexels.com/photos/15625085/pexels-photo-15625085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Long distance rider exploring scenic highway with peace of mind",
+      "placement": "Storytelling section background banner"
+    }
+  },
+  "sections_breakdown": [
+    {
+      "section_id": "nav",
+      "title": "Sticky Glassmorphism Header",
+      "features": [
+        "Brand Logo with animated pulse safety dot",
+        "Links: How It Works, Features, QR Kits, Emergency Scenario, FAQs",
+        "CTA Buttons: 'Activate QR' (triggers modal) and 'Buy QR Kit' (smooth scroll to #kits)",
+        "Mobile responsive hamburger drawer"
+      ]
+    },
+    {
+      "section_id": "hero",
+      "title": "Kinetic Hero Section",
+      "features": [
+        "Index Tag: 01 / REVOLUTIONIZING RIDER SAFETY",
+        "Masked Line-by-Line Headline Reveal: 'ONE SCAN CAN SAVE A RIDER'S LIFE.'",
+        "Subheadline explaining instant emergency medical profiles & automatic contact notification",
+        "Primary CTAs with glow effect + Live Emergency Scan Counter badge",
+        "Interactive 3D hover mockup: Premium motorcycle + helmet with highlighted laser QR scan target"
+      ]
+    },
+    {
+      "section_id": "trust",
+      "title": "Trust & Social Proof Bar",
+      "features": [
+        "Stats: 45,000+ Active Riders, 1.2s Average Scan Response Time, 100% Medical Grade Scratchproof Decals, 4.9/5 Rating",
+        "Safety Accreditations & Press Badges",
+        "Slow Editorial Marquee component running key safety guarantees"
+      ]
+    },
+    {
+      "section_id": "how-it-works",
+      "title": "Manifesto Chapter 02: How ParkSafe Works",
+      "features": [
+        "Step 1: Get Your QR Kit (Weatherproof laser-etched stickers for Bike, Helmet, Phone)",
+        "Step 2: Register Emergency Profile (Add blood group, medical conditions, ICE contacts, insurance)",
+        "Step 3: Instant Emergency Scan (Anyone scans with phone camera — zero app installation needed)"
+      ]
+    },
+    {
+      "section_id": "features",
+      "title": "Why Choose ParkSafe (6 Feature Bento Grid)",
+      "features": [
+        "1. Instant Access: No app download required for Good Samaritans or First Responders",
+        "2. Permanent Unique QR: Laser-etched UV & chemical resistant vinyl stickers",
+        "3. Crucial Medical Data: Blood group, allergies, organ donor status, doctor details",
+        "4. One-Tap Emergency Contact: Auto SMS & WhatsApp location pin alert to family",
+        "5. Multi-Surface Fit: Helmets, gas tanks, windshields, mobile cases & key fobs",
+        "6. Privacy Control: Confidential PIN-protected personal info, public-only emergency card"
+      ]
+    },
+    {
+      "section_id": "kits",
+      "title": "Manifesto Chapter 03: QR Kit Showcase",
+      "features": [
+        "Product 1: Bike QR Kit ($19.99) - 2x Metallic Tank Decals + 1x License Plate QR Tag",
+        "Product 2: Helmet Pro Pack ($24.99) - 2x Reflective Visor Decals + 2x Rear Helmet Tags",
+        "Product 3: Mobile & Key Kit ($14.99) - 1x Slim Phone Back QR + 1x Stainless Keychain Tag",
+        "Product 4: Rider Family Bundle ($49.99 - Best Value) - Complete setup for 3 vehicles + 4 helmets",
+        "Interactive Kit Selector, Quantity Toggles, and 'Buy Now' instant order modal/toast integration"
+      ]
+    },
+    {
+      "section_id": "emergency-scenario",
+      "title": "Real-Life Emergency Scenario (Interactive Storytelling)",
+      "features": [
+        "Timeline Stepper: 00:00 Incident Occurs -> 00:15 Good Samaritan Scans QR -> 00:30 Family Notified with Live GPS -> 00:45 Paramedics View Critical Blood Group & Allergies",
+        "Interactive Simulator Toggle: Try Scanning a Test Rider Profile live in the browser modal!"
+      ]
+    },
+    {
+      "section_id": "testimonials",
+      "title": "Rider Stories & Reviews",
+      "features": [
+        "Card 1: Marcus T. (Track Day & Highway Commuter) - 'The peace of mind when riding solo at night is unmatched.'",
+        "Card 2: Dr. Aris V. (EMR Trauma Surgeon) - 'Having instant access to blood type & emergency contacts in seconds changes survival outcomes.'",
+        "Card 3: Elena R. (Touring Club Captain) - 'Outfitted our entire 50-rider club with ParkSafe kits. Essential gear.'"
+      ]
+    },
+    {
+      "section_id": "faq",
+      "title": "Frequently Asked Questions (Accordion)",
+      "features": [
+        "Does the responder need an app? (No, works on any smartphone camera)",
+        "What happens if the QR sticker gets dirty or scratched? (High error correction QR code)",
+        "How is my private data protected? (Role-based access & PIN privacy lock)",
+        "Can I update my medical information later? (Yes, real-time sync in dashboard)",
+        "Is there a subscription fee? (No monthly fee for core emergency alerts)"
+      ]
+    },
+    {
+      "section_id": "cta",
+      "title": "Final Kinetic CTA Banner",
+      "features": [
+        "High-contrast callout: 'DON'T RIDE UNPROTECTED ANOTHER DAY.'",
+        "Dual Action: 'Order Your QR Kit Today' + 'Activate Existing QR Code'",
+        "Money-back guarantee & 2-day free shipping badge"
+      ]
+    },
+    {
+      "section_id": "footer",
+      "title": "Footer Section",
+      "features": [
+        "Brand summary, quick links, legal/privacy policy, emergency helpline line",
+        "Massive watermark typography background"
+      ]
+    }
+  ],
+  "interactive_components_and_modals": {
+    "activate_qr_modal": "Dialog window allowing users to type or scan a 6-digit QR code to link their emergency profile, integrated with Sonner toast feedback.",
+    "buy_now_modal": "Checkout pre-order modal displaying kit details, pricing, delivery estimate, and order completion toast.",
+    "simulated_scan_modal": "Live demo preview showing what a paramedic/first responder sees when scanning a ParkSafe QR (Blood Type: O+, Emergency Contacts, Allergies, Medical Insurance)."
+  },
+  "instructions_to_main_agent": [
+    "Ensure all interactive buttons, inputs, tabs, accordions, and cards have explicit data-testid attributes (e.g., data-testid='buy-kit-button', data-testid='activate-qr-nav-button').",
+    "Use framer-motion for smooth entrance reveals, scroll progress indicators, hover elevation, and line-by-line kinetic hero text reveal.",
+    "Integrate `@studio-freight/lenis` or Lenis smooth scrolling if possible, or smooth scroll CSS behavior for hash links.",
+    "Use lucide-react or @phosphor-icons/react icons throughout for tactical safety styling (ShieldAlert, QrCode, HeartPulse, PhoneCall, Award, CheckCircle2, Lock, Zap, ArrowRight, Star).",
+    "Never use generic centered layouts or plain white backgrounds. Strictly apply the Dark Tactical #0A0D14 theme with high-visibility #FF3B30 red accents.",
+    "Use Sonner (`toast` from `sonner`) for feedback when clicking 'Activate QR', 'Buy Now', or submitting forms."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
+    "testing_attributes": "All interactive elements MUST include kebab-case role-based data-testid attributes.",
+    "anti_slop_rule": "Avoid generic Vercel/Inter UI. Use high contrast, noise/grid backgrounds, subtle red glow borders, clear typography hierarchy with Outfit and JetBrains Mono.",
+    "performance": "Ensure crisp responsive image rendering using native standard image containers without layout shifts.",
+    "color_contrast": "Main text must be bright #F8FAFC over dark slate containers for maximum readability."
+  }
+}
