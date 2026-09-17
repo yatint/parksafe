@@ -41,7 +41,7 @@ const Trust = () => (
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
         {STATS.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.1}>
-            <p className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-50" data-testid={`stat-value-${i}`}>
+            <p className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink" data-testid={`stat-value-${i}`}>
               <CountUp to={s.value} suffix={s.suffix} />
             </p>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500 mt-2">{s.label}</p>
@@ -53,16 +53,16 @@ const Trust = () => (
               <Star key={i} className="w-5 h-5 fill-ember text-ember" />
             ))}
           </div>
-          <p className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-50 mt-1">4.9<span className="text-slate-500 text-2xl">/5</span></p>
+          <p className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-ink mt-1">4.9<span className="text-slate-400 text-2xl">/5</span></p>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500 mt-2">9,200+ Rider Reviews</p>
         </Reveal>
       </div>
 
       <Reveal delay={0.15} className="mt-14">
         <div className="flex flex-wrap items-center gap-x-10 gap-y-4" data-testid="trust-badges">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-600">TRUSTED &amp; FEATURED BY</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-400">TRUSTED &amp; FEATURED BY</span>
           {BADGES.map((b) => (
-            <span key={b} className="font-display text-sm font-bold tracking-[0.2em] text-slate-500 hover:text-slate-300 transition-colors duration-300">
+            <span key={b} className="font-display text-sm font-bold tracking-[0.2em] text-slate-400 hover:text-ink transition-colors duration-300">
               {b}
             </span>
           ))}

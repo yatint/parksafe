@@ -14,7 +14,7 @@ const FEATURES = [
 ];
 
 const Features = () => (
-  <section id="features" className="relative py-24 sm:py-32 bg-panel/30" data-testid="features-section">
+  <section id="features" className="relative py-24 sm:py-32 bg-white border-y border-ink/10" data-testid="features-section">
     <div className="max-w-7xl mx-auto px-5 sm:px-8">
       <SectionHead
         chapter="03"
@@ -26,7 +26,11 @@ const Features = () => (
         {FEATURES.map((f, i) => (
           <Reveal key={f.title} delay={i * 0.08} className={f.wide ? "sm:col-span-2" : ""}>
             <div
-              className="relative h-full min-h-[220px] bg-panel border border-white/10 rounded-2xl p-7 overflow-hidden hover:border-ember/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(255,59,48,0.25)] group flex flex-col justify-end"
+              className={`relative h-full min-h-[220px] rounded-2xl p-7 overflow-hidden transition-all duration-500 group flex flex-col justify-end ${
+                f.wide
+                  ? "bg-panel border border-ink/20 hover:shadow-[0_24px_60px_-20px_rgba(19,31,56,0.5)]"
+                  : "bg-bone border border-ink/10 hover:border-ember/50 hover:shadow-[0_24px_50px_-20px_rgba(230,59,46,0.25)]"
+              }`}
               data-testid={`feature-card-${i}`}
             >
               {f.wide && (
@@ -36,11 +40,13 @@ const Features = () => (
                 </>
               )}
               <div className="relative">
-                <div className="w-11 h-11 rounded-lg bg-ember/15 border border-ember/40 flex items-center justify-center mb-5 transition-transform duration-500 group-hover:-translate-y-1">
+                <div className={`w-11 h-11 rounded-lg flex items-center justify-center mb-5 transition-transform duration-500 group-hover:-translate-y-1 ${
+                  f.wide ? "bg-white/10 border border-ember/50" : "bg-ember/10 border border-ember/30"
+                }`}>
                   <f.icon className="w-5 h-5 text-ember" />
                 </div>
-                <h3 className="font-display text-lg font-bold tracking-tight">{f.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed mt-2">{f.text}</p>
+                <h3 className={`font-display text-lg font-bold tracking-tight ${f.wide ? "text-white" : "text-ink"}`}>{f.title}</h3>
+                <p className={`text-sm leading-relaxed mt-2 ${f.wide ? "text-slate-300" : "text-slate-500"}`}>{f.text}</p>
               </div>
             </div>
           </Reveal>

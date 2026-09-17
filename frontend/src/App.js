@@ -34,7 +34,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-ink text-slate-50 font-body min-h-screen" data-testid="parksafe-app">
+    <div className="bg-bone text-ink font-body min-h-screen" data-testid="parksafe-app">
       <Nav onActivate={() => setActivateOpen(true)} />
       <main>
         <Hero onActivate={() => setActivateOpen(true)} />
@@ -50,13 +50,13 @@ function App() {
       <Footer />
       <ActivateModal open={activateOpen} onClose={() => setActivateOpen(false)} />
       <Toaster
-        theme="dark"
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#111622",
-            border: "1px solid rgba(255,59,48,0.35)",
-            color: "#F8FAFC",
+            background: "#FFFFFF",
+            border: "1px solid rgba(19,31,56,0.12)",
+            color: "#131F38",
+            boxShadow: "0 12px 40px -12px rgba(19,31,56,0.25)",
           },
         }}
       />

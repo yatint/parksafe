@@ -60,11 +60,11 @@ const Hero = ({ onActivate }) => {
             01 / Rider Safety Protocol
           </motion.p>
 
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mt-6" data-testid="hero-headline">
+          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mt-6 text-ink" data-testid="hero-headline">
             <MaskLine delay={0.3}>ONE SCAN.</MaskLine>
             <MaskLine delay={0.45}>CAN SAVE A</MaskLine>
             <MaskLine delay={0.6}>
-              <span style={{ backgroundImage: "linear-gradient(90deg,#FF3B30,#FF5722)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>RIDER'S LIFE.</span>
+              <span style={{ backgroundImage: "linear-gradient(90deg,#E63B2E,#FF6B35)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>RIDER'S LIFE.</span>
             </MaskLine>
           </h1>
 
@@ -72,7 +72,7 @@ const Hero = ({ onActivate }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.85 }}
-            className="text-base sm:text-lg text-slate-400 leading-relaxed mt-7 max-w-xl"
+            className="text-base sm:text-lg text-slate-600 leading-relaxed mt-7 max-w-xl"
             data-testid="hero-subheadline"
           >
             ParkSafe puts your blood group, emergency contacts and medical alerts behind one permanent QR
@@ -88,15 +88,15 @@ const Hero = ({ onActivate }) => {
             <button
               onClick={() => scrollToId("#kits")}
               data-testid="hero-buy-kit-button"
-              className="group flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold bg-ember text-white hover:bg-flame transition-colors duration-300 shadow-[0_0_40px_-8px_rgba(255,59,48,0.7)]"
+              className="group flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold bg-ember text-white hover:bg-flame transition-colors duration-300 shadow-[0_16px_40px_-12px_rgba(230,59,46,0.6)]"
             >
-              Buy Your QR Kit
+              Buy Your QR Kit — ₹149
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <button
               onClick={onActivate}
               data-testid="hero-activate-qr-button"
-              className="flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold border border-white/15 text-slate-200 hover:border-ember/60 hover:text-white transition-colors duration-300"
+              className="flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold border border-ink/15 text-ink hover:border-ember/60 hover:text-ember transition-colors duration-300 bg-white/60"
             >
               <QrCode className="w-4 h-4" /> Activate QR
             </button>
@@ -106,12 +106,12 @@ const Hero = ({ onActivate }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="inline-flex items-center gap-3 mt-9 px-4 py-2 rounded-full bg-panel/80 border border-white/10"
+            className="inline-flex items-center gap-3 mt-9 px-4 py-2 rounded-full bg-white border border-ink/10 shadow-sm"
             data-testid="hero-scan-counter"
           >
             <span className="w-2 h-2 rounded-full bg-signal animate-pulse-dot" />
-            <span className="font-mono text-xs tracking-wider text-slate-300">
-              LIVE — <span className="text-slate-50 font-semibold">{scans.toLocaleString()}</span> EMERGENCY SCANS RESOLVED
+            <span className="font-mono text-xs tracking-wider text-slate-500">
+              LIVE — <span className="text-ink font-semibold">{scans.toLocaleString()}</span> EMERGENCY SCANS RESOLVED
             </span>
           </motion.div>
         </div>
@@ -128,7 +128,7 @@ const Hero = ({ onActivate }) => {
               onMouseMove={onMove}
               onMouseLeave={() => { mx.set(0.5); my.set(0.5); }}
               style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-              className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]"
+              className="relative rounded-3xl overflow-hidden border border-ink/10 shadow-[0_40px_80px_-24px_rgba(19,31,56,0.45)]"
               data-testid="hero-product-mockup"
             >
               <img
@@ -136,15 +136,15 @@ const Hero = ({ onActivate }) => {
                 alt="Rider wearing helmet with ParkSafe QR badge on motorcycle"
                 className="w-full aspect-[4/5] sm:aspect-[5/5] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
 
-              <div className="absolute top-5 left-5 px-3.5 py-2 rounded-lg backdrop-blur-md bg-ink/70 border border-white/15" style={{ transform: "translateZ(40px)" }}>
-                <p className="font-mono text-[10px] tracking-[0.25em] text-slate-400">PERMANENT ID</p>
-                <p className="font-mono text-sm font-bold text-slate-50 tracking-widest">PS-8F3K21</p>
+              <div className="absolute top-5 left-5 px-3.5 py-2 rounded-lg backdrop-blur-md bg-white/85 border border-ink/10 shadow-sm" style={{ transform: "translateZ(40px)" }}>
+                <p className="font-mono text-[10px] tracking-[0.25em] text-slate-500">PERMANENT ID</p>
+                <p className="font-mono text-sm font-bold text-ink tracking-widest">PS-8F3K21</p>
               </div>
 
               <div className="absolute bottom-6 right-6" style={{ transform: "translateZ(60px)" }}>
-                <div className="relative p-3 rounded-2xl bg-white shadow-[0_0_40px_-4px_rgba(255,59,48,0.55)]">
+                <div className="relative p-3 rounded-2xl bg-white shadow-[0_16px_50px_-10px_rgba(230,59,46,0.5)]">
                   <QRMark size={104} />
                   <div className="absolute left-2 right-2 h-0.5 bg-ember animate-scanline rounded-full" />
                   <span className="absolute -top-1.5 -left-1.5 w-4 h-4 border-t-2 border-l-2 border-ember rounded-tl-sm" />

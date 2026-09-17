@@ -1,118 +1,111 @@
-import { Check, ShoppingCart } from "lucide-react";
+import { Check, ShoppingCart, Bike, HardHat, Smartphone, Truck, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
-import { Reveal, SectionHead } from "./shared";
+import { Reveal } from "./shared";
+import QRMark from "./QRMark";
 
 const IMGS = {
   bike: "https://images.pexels.com/photos/12000096/pexels-photo-12000096.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   helmet: "https://images.pexels.com/photos/33323855/pexels-photo-33323855.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   mobile: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
-  family: "https://images.pexels.com/photos/15625085/pexels-photo-15625085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 };
 
-const KITS = [
-  {
-    id: "bike",
-    name: "Bike QR Kit",
-    price: "$19.99",
-    img: IMGS.bike,
-    items: ["2x Metallic tank decals", "1x License plate QR tag", "Weatherproof & UV-proof"],
-  },
-  {
-    id: "helmet",
-    name: "Helmet Pro Pack",
-    price: "$24.99",
-    img: IMGS.helmet,
-    items: ["2x Reflective visor decals", "2x Rear helmet tags", "Night-visible laminate"],
-  },
-  {
-    id: "mobile",
-    name: "Mobile & Key Kit",
-    price: "$14.99",
-    img: IMGS.mobile,
-    items: ["1x Slim phone-back QR", "1x Stainless keychain tag", "Scratchproof coating"],
-  },
-  {
-    id: "family",
-    name: "Rider Family Bundle",
-    price: "$49.99",
-    img: IMGS.family,
-    badge: "BEST VALUE",
-    items: ["Covers 3 vehicles + 4 helmets", "Shared family ICE network", "Priority profile support"],
-  },
+const INCLUDED = [
+  "2x Metallic bike tank decals",
+  "2x Reflective helmet tags",
+  "1x Slim phone-back QR sticker",
+  "1x Stainless steel keychain tag",
+  "Lifetime emergency profile — no subscription",
+];
+
+const SURFACES = [
+  { icon: Bike, label: "Bike" },
+  { icon: HardHat, label: "Helmet" },
+  { icon: Smartphone, label: "Phone" },
 ];
 
 const Kits = () => {
-  const buy = (name) =>
-    toast.success(`${name} added — checkout opens when pre-orders go live. You're on the list.`);
+  const buy = () =>
+    toast.success("ParkSafe QR Kit added — checkout opens when pre-orders go live. You're on the list.");
 
   return (
     <section id="kits" className="relative py-24 sm:py-32 grid-bg" data-testid="kits-section">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <SectionHead
-          chapter="04"
-          tag="The Kits"
-          title="Pick your protection."
-          sub="Every kit carries the same permanent identity. Choose where yours lives."
-        />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {KITS.map((k, i) => (
-            <Reveal key={k.id} delay={i * 0.1}>
-              <div
-                className={`relative h-full bg-panel rounded-2xl overflow-hidden border transition-all duration-500 group flex flex-col ${
-                  k.badge
-                    ? "border-ember/60 shadow-[0_0_50px_-12px_rgba(255,59,48,0.45)]"
-                    : "border-white/10 hover:border-ember/50 hover:shadow-[0_0_40px_-10px_rgba(255,59,48,0.25)]"
-                }`}
-                data-testid={`kit-card-${k.id}`}
-              >
-                {k.badge && (
-                  <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-ember text-white font-mono text-[10px] font-bold tracking-[0.2em]" data-testid="kit-badge-best-value">
-                    {k.badge}
-                  </span>
-                )}
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img
-                    src={k.img}
-                    alt={k.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-panel via-transparent to-transparent" />
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <Reveal>
+            <div className="relative" data-testid="kit-image-composition">
+              <div className="rounded-3xl overflow-hidden border border-ink/10 shadow-[0_40px_80px_-24px_rgba(19,31,56,0.35)]">
+                <img src={IMGS.bike} alt="ParkSafe QR decal on motorcycle tank" className="w-full aspect-[4/3] object-cover" />
+              </div>
+              <div className="absolute -bottom-8 -right-4 sm:-right-8 flex gap-4">
+                <div className="w-28 sm:w-36 rounded-2xl overflow-hidden border-4 border-bone shadow-xl rotate-3">
+                  <img src={IMGS.helmet} alt="Helmet QR tag" loading="lazy" className="w-full aspect-square object-cover" />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="font-display text-xl font-bold tracking-tight">{k.name}</h3>
-                    <span className="font-display text-lg font-extrabold text-ember" data-testid={`kit-price-${k.id}`}>{k.price}</span>
-                  </div>
-                  <ul className="mt-4 space-y-2.5 flex-1">
-                    {k.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-400">
-                        <Check className="w-4 h-4 text-signal mt-0.5 shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    onClick={() => buy(k.name)}
-                    data-testid={`kit-buy-button-${k.id}`}
-                    className={`mt-6 w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-colors duration-300 ${
-                      k.badge
-                        ? "bg-ember text-white hover:bg-flame"
-                        : "border border-white/15 text-slate-200 hover:border-ember/60 hover:text-white"
-                    }`}
-                  >
-                    <ShoppingCart className="w-4 h-4" /> Buy Now
-                  </button>
+                <div className="w-28 sm:w-36 rounded-2xl overflow-hidden border-4 border-bone shadow-xl -rotate-2 mt-6">
+                  <img src={IMGS.mobile} alt="Phone QR sticker" loading="lazy" className="w-full aspect-square object-cover" />
                 </div>
               </div>
-            </Reveal>
-          ))}
+              <div className="absolute -top-5 -left-3 sm:-left-5 p-2.5 rounded-xl bg-white border border-ink/10 shadow-lg -rotate-6">
+                <QRMark size={64} seed={9} />
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-ember font-semibold" data-testid="chapter-tag-04">
+              04 / The Kit
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mt-4 text-ink" data-testid="kit-title">
+              One kit. Every ride.<br />One price.
+            </h2>
+
+            <div className="flex items-end gap-3 mt-7">
+              <span className="font-display text-6xl sm:text-7xl font-extrabold tracking-tight text-ink" data-testid="kit-price-main">₹149</span>
+              <span className="font-mono text-xs tracking-wider text-slate-500 pb-3 leading-relaxed">
+                ONE-TIME<br />NO SUBSCRIPTION
+              </span>
+            </div>
+
+            <div className="flex gap-3 mt-7">
+              {SURFACES.map((s) => (
+                <span
+                  key={s.label}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-ink/10 text-sm font-semibold text-ink"
+                  data-testid={`kit-surface-${s.label.toLowerCase()}`}
+                >
+                  <s.icon className="w-4 h-4 text-ember" /> {s.label}
+                </span>
+              ))}
+            </div>
+
+            <ul className="mt-8 space-y-3">
+              {INCLUDED.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-slate-600">
+                  <span className="w-5 h-5 rounded-full bg-signal/10 border border-signal/30 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-signal" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <button
+              onClick={buy}
+              data-testid="kit-buy-button-main"
+              className="group mt-9 w-full sm:w-auto flex items-center justify-center gap-2.5 px-9 py-4 rounded-full font-semibold bg-ember text-white hover:bg-flame transition-colors duration-300 shadow-[0_16px_40px_-12px_rgba(230,59,46,0.6)]"
+            >
+              <ShoppingCart className="w-4 h-4" /> Buy Now — ₹149.00
+            </button>
+
+            <div className="flex flex-wrap gap-x-7 gap-y-2.5 mt-7">
+              <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-slate-500">
+                <Truck className="w-4 h-4 text-signal" /> FREE SHIPPING ACROSS INDIA
+              </span>
+              <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-slate-500">
+                <ShieldCheck className="w-4 h-4 text-signal" /> 30-DAY MONEY-BACK GUARANTEE
+              </span>
+            </div>
+          </Reveal>
         </div>
-        <Reveal delay={0.2} className="mt-10 text-center">
-          <p className="font-mono text-xs tracking-[0.2em] text-slate-500" data-testid="kits-shipping-note">
-            FREE 2-DAY SHIPPING &nbsp;•&nbsp; 30-DAY MONEY-BACK GUARANTEE &nbsp;•&nbsp; NO SUBSCRIPTION
-          </p>
-        </Reveal>
       </div>
     </section>
   );

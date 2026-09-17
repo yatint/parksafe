@@ -4,8 +4,10 @@
 Build a single-page responsive landing page for ParkSafe, a QR-based emergency identity platform for riders/vehicle owners. Sections: Hero, Trust & Social Proof, How It Works (3 steps), Why Choose ParkSafe (6 features), QR Kit Showcase (4 kits), Real-Life Emergency Scenario, Testimonials, FAQ accordion, Final CTA, Footer. Frontend only — no backend, auth, or admin. Design: mobile-first, premium dark UI, smooth anchored scrolling, high-quality mockups.
 
 ## User Choices
-- Theme: Dark & bold with emergency red/orange accent (#FF3B30 / #FF5722)
-- Buttons: smooth-scroll to QR kits / "coming soon" toast (no real checkout)
+- Theme v2 (current): Light & clinical — warm off-white #F6F3EE background, deep navy #131F38 text, safety red #E63B2E / orange #FF6B35 accents; scenario + final CTA + footer are inverted navy bands
+- Theme v1 (replaced): dark tactical #0A0D14 — replaced on user request
+- Pricing: ONE single QR Kit at a fixed ₹149.00 (one-time, no subscription) covering bike, helmet and phone — replaced the 4-kit showcase
+- Buttons: smooth-scroll to kit / "coming soon" toast (no real checkout)
 - Mandate: Awwwards-level craft — kinetic masked headline reveal, numbered manifesto chapters, editorial marquee, framer-motion reveals, Lenis smooth scroll, 3D tilt hero with parallax
 
 ## Architecture
@@ -25,7 +27,7 @@ Build a single-page responsive landing page for ParkSafe, a QR-based emergency i
 - Trust bar: count-up stats (45,000+ riders, 128,000+ lives protected, 640+ cities, 4.9/5), press/accreditation badges, slow editorial marquee
 - How It Works: 3 numbered steps with ghost numerals
 - Why Choose: 6-card bento grid with photo-treated wide cards
-- QR Kits: 4 product cards ($14.99–$49.99), Best Value highlight, Buy Now → toast (pre-order placeholder)
+- QR Kit: single hero product section — ₹149.00 one-time, image composition (bike/helmet/phone), includes list, Buy Now → toast (pre-order placeholder)
 - Emergency Scenario: 00:00–00:45 timeline + "Simulate a Scan" modal showing a live emergency profile card
 - Testimonials: 3 rider/surgeon reviews with monogram avatars
 - FAQ: 6-item animated accordion

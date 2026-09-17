@@ -3,7 +3,7 @@ const N = 21;
 const inFinder = (r, c) =>
   (r < 7 && c < 7) || (r < 7 && c >= N - 7) || (r >= N - 7 && c < 7);
 
-const QRMark = ({ size = 120, dark = "#0A0D14", seed = 5 }) => {
+const QRMark = ({ size = 120, dark = "#131F38", seed = 5 }) => {
   const cells = [];
   for (let r = 0; r < N; r++) {
     for (let c = 0; c < N; c++) {

@@ -4,7 +4,7 @@ import { scrollToId } from "@/lib/scroll";
 const EXPLORE = [
   ["How It Works", "#how"],
   ["Features", "#features"],
-  ["QR Kits", "#kits"],
+  ["QR Kit", "#kits"],
   ["Scenario", "#scenario"],
   ["FAQ", "#faq"],
 ];
@@ -17,8 +17,8 @@ const SOCIALS = [
 ];
 
 const Footer = () => (
-  <footer className="relative border-t border-white/10 overflow-hidden" data-testid="site-footer">
-    <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 font-display font-extrabold text-[22vw] leading-none text-stroke select-none pointer-events-none whitespace-nowrap" aria-hidden="true">
+  <footer className="relative border-t border-white/10 bg-panel overflow-hidden" data-testid="site-footer">
+    <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 font-display font-extrabold text-[22vw] leading-none text-stroke-light select-none pointer-events-none whitespace-nowrap" aria-hidden="true">
       PARKSAFE
     </span>
 
@@ -29,12 +29,12 @@ const Footer = () => (
             <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-ember/15 border border-ember/40">
               <ShieldAlert className="w-5 h-5 text-ember" />
             </span>
-            <span className="font-display font-extrabold text-lg tracking-tight">
+            <span className="font-display font-extrabold text-lg tracking-tight text-white">
               PARK<span className="text-ember">SAFE</span>
             </span>
           </div>
           <p className="text-sm text-slate-400 leading-relaxed mt-5 max-w-xs">
-            A permanent QR identity that speaks for you when you can't. Built for riders, by riders.
+            A permanent QR identity that speaks for you when you can't. Built for riders, by riders. One kit, ₹149, forever.
           </p>
           <div className="flex gap-3 mt-6">
             {SOCIALS.map((s) => (
@@ -61,7 +61,7 @@ const Footer = () => (
                   href={id}
                   onClick={(e) => { e.preventDefault(); scrollToId(id); }}
                   data-testid={`footer-link-${label.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-sm text-slate-400 hover:text-slate-50 transition-colors duration-300"
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-300"
                 >
                   {label}
                 </a>
@@ -79,7 +79,7 @@ const Footer = () => (
                   href="#top"
                   onClick={(e) => e.preventDefault()}
                   data-testid={`footer-legal-${l.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-sm text-slate-400 hover:text-slate-50 transition-colors duration-300"
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-300"
                 >
                   {l}
                 </a>
@@ -99,17 +99,17 @@ const Footer = () => (
               <Mail className="w-4 h-4 text-ember shrink-0" /> help@parksafe.io
             </li>
             <li className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-ember shrink-0 mt-0.5" /> 42 Rider's Way, Austin, TX 78701
+              <MapPin className="w-4 h-4 text-ember shrink-0 mt-0.5" /> Bengaluru, Karnataka, India
             </li>
           </ul>
         </div>
       </div>
 
       <div className="relative mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="font-mono text-xs tracking-wider text-slate-600" data-testid="footer-copyright">
+        <p className="font-mono text-xs tracking-wider text-slate-500" data-testid="footer-copyright">
           © 2026 PARKSAFE INC. ALL RIGHTS RESERVED.
         </p>
-        <p className="font-mono text-xs tracking-wider text-slate-600">
+        <p className="font-mono text-xs tracking-wider text-slate-500">
           ONE SCAN. EVERYTHING THAT MATTERS.
         </p>
       </div>

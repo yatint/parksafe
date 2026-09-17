@@ -34,24 +34,24 @@ const Testimonials = () => (
         {REVIEWS.map((r, i) => (
           <Reveal key={r.name} delay={i * 0.12}>
             <figure
-              className="relative h-full bg-panel border border-white/10 rounded-2xl p-8 hover:border-ember/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(255,59,48,0.2)]"
+              className="relative h-full bg-white border border-ink/10 rounded-2xl p-8 hover:border-ember/50 transition-all duration-500 hover:shadow-[0_24px_50px_-20px_rgba(230,59,46,0.25)]"
               data-testid={`testimonial-card-${i}`}
             >
-              <Quote className="w-8 h-8 text-ember/40" />
+              <Quote className="w-8 h-8 text-ember/30" />
               <div className="flex gap-1 mt-4">
                 {[...Array(5)].map((_, s) => (
                   <Star key={s} className="w-4 h-4 fill-ember text-ember" />
                 ))}
               </div>
-              <blockquote className="text-sm sm:text-base text-slate-300 leading-relaxed mt-4">
+              <blockquote className="text-sm sm:text-base text-slate-600 leading-relaxed mt-4">
                 "{r.text}"
               </blockquote>
-              <figcaption className="flex items-center gap-4 mt-7 pt-6 border-t border-white/10">
+              <figcaption className="flex items-center gap-4 mt-7 pt-6 border-t border-ink/10">
                 <span className="w-12 h-12 rounded-full bg-gradient-to-br from-ember to-flame flex items-center justify-center font-display font-bold text-white">
                   {r.initials}
                 </span>
                 <div>
-                  <p className="font-display font-bold">{r.name}</p>
+                  <p className="font-display font-bold text-ink">{r.name}</p>
                   <p className="font-mono text-[11px] tracking-wider text-slate-500 mt-0.5">{r.role}</p>
                 </div>
               </figcaption>
